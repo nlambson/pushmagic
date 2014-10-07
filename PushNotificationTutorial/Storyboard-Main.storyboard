@@ -55,14 +55,51 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bRZ-oc-9fY">
+                                <rect key="frame" x="16" y="66" width="568" height="73"/>
+                                <color key="backgroundColor" red="0.86282803870000002" green="0.86282803870000002" blue="0.86282803870000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="73" id="LMH-PT-FgK"/>
+                                </constraints>
+                                <state key="normal" title="Start Recording Knock">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="knockTouched:" destination="2lM-wX-jxe" eventType="touchUpInside" id="zTh-5d-HVB"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lz1-NR-PZh">
+                                <rect key="frame" x="16" y="147" width="568" height="136"/>
+                                <color key="backgroundColor" red="0.25882352939999997" green="0.4549019608" blue="0.72549019609999998" alpha="1" colorSpace="deviceRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="136" id="0cU-Xh-Z0E"/>
+                                </constraints>
+                                <state key="normal" title="Knock Here">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="actualKnockTouched:" destination="2lM-wX-jxe" eventType="touchUpInside" id="c2n-FY-JEt"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="2Ud-Sz-EqR" firstAttribute="trailing" secondItem="aC3-l4-SGN" secondAttribute="trailingMargin" id="T1j-N6-kch"/>
+                            <constraint firstItem="bRZ-oc-9fY" firstAttribute="leading" secondItem="aC3-l4-SGN" secondAttribute="leading" constant="16" id="YhA-Cf-VXj"/>
+                            <constraint firstItem="lz1-NR-PZh" firstAttribute="leading" secondItem="aC3-l4-SGN" secondAttribute="leading" constant="16" id="ZIp-ev-zcL"/>
                             <constraint firstItem="2Ud-Sz-EqR" firstAttribute="leading" secondItem="aC3-l4-SGN" secondAttribute="leadingMargin" id="aSf-Ic-X6U"/>
+                            <constraint firstAttribute="trailing" secondItem="bRZ-oc-9fY" secondAttribute="trailing" constant="16" id="g7U-UK-pJK"/>
                             <constraint firstItem="2Ud-Sz-EqR" firstAttribute="top" secondItem="6HS-9b-xyQ" secondAttribute="bottom" constant="8" id="iqz-re-IES"/>
+                            <constraint firstAttribute="trailing" secondItem="lz1-NR-PZh" secondAttribute="trailing" constant="16" id="oCr-mR-r7V"/>
+                            <constraint firstItem="bRZ-oc-9fY" firstAttribute="top" secondItem="2Ud-Sz-EqR" secondAttribute="bottom" constant="8" id="qNW-bQ-cKq"/>
+                            <constraint firstItem="lz1-NR-PZh" firstAttribute="top" secondItem="bRZ-oc-9fY" secondAttribute="bottom" constant="8" id="yrC-J9-g92"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="knockStartStopButton" destination="bRZ-oc-9fY" id="OoB-hF-k8J"/>
+                        <outlet property="knockViewHeightConstraint" destination="0cU-Xh-Z0E" id="Vha-zS-Rk1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vuf-Kv-A8c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
