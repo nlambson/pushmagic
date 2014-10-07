@@ -12,7 +12,7 @@
 
 - (void) openDoorWithSuccess:(void(^)(void))success failure:(void(^)(NSError *error))failure {
     
-    NSLog(@"Open the door please");
+    NSLog(@"Open the door");
     
     if (YES) {
         success();
