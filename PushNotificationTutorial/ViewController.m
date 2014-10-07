@@ -20,6 +20,11 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+- (IBAction)showPeople:(id)sender {
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Storyboard-Main" bundle:nil];
+    [self.navigationController pushViewController:[sb instantiateInitialViewController] animated:YES];
+}
+
 
 #pragma mark - UIViewController
 
