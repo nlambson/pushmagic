@@ -11,6 +11,8 @@
 		6D10F48516DD714F00690A0F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D10F48416DD714F00690A0F /* CoreLocation.framework */; };
 		6D2CA81916E01A8300B2695E /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D2CA81816E01A8300B2695E /* Default-568h@2x.png */; };
 		B541B98019E485C7001D0EA0 /* PMDoorController.m in Sources */ = {isa = PBXBuildFile; fileRef = B541B97F19E485C7001D0EA0 /* PMDoorController.m */; };
+		B5C8BDA819E4AB57006AEC89 /* KnockResponseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5C8BDA719E4AB57006AEC89 /* KnockResponseViewController.m */; };
+		B5C8BDAA19E4AB6C006AEC89 /* KnockResponseStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5C8BDA919E4AB6C006AEC89 /* KnockResponseStoryboard.storyboard */; };
 		BD61B4A419E4919600C24891 /* Storyboard-Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD61B4A319E4919600C24891 /* Storyboard-Main.storyboard */; };
 		BD61B4AA19E4934C00C24891 /* UsersTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD61B4A919E4934C00C24891 /* UsersTableViewController.m */; };
 		BD61B4AC19E4978700C24891 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD61B4AB19E4978700C24891 /* AddressBook.framework */; };
@@ -46,6 +48,9 @@
 		6D2CA81816E01A8300B2695E /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		B541B97E19E485C7001D0EA0 /* PMDoorController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMDoorController.h; sourceTree = "<group>"; };
 		B541B97F19E485C7001D0EA0 /* PMDoorController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PMDoorController.m; sourceTree = "<group>"; };
+		B5C8BDA619E4AB57006AEC89 /* KnockResponseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KnockResponseViewController.h; sourceTree = "<group>"; };
+		B5C8BDA719E4AB57006AEC89 /* KnockResponseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KnockResponseViewController.m; sourceTree = "<group>"; };
+		B5C8BDA919E4AB6C006AEC89 /* KnockResponseStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = KnockResponseStoryboard.storyboard; sourceTree = "<group>"; };
 		BD61B4A319E4919600C24891 /* Storyboard-Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Storyboard-Main.storyboard"; sourceTree = "<group>"; };
 		BD61B4A819E4934C00C24891 /* UsersTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UsersTableViewController.h; sourceTree = "<group>"; };
 		BD61B4A919E4934C00C24891 /* UsersTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UsersTableViewController.m; sourceTree = "<group>"; };
@@ -120,6 +125,16 @@
 			name = Users;
 			sourceTree = "<group>";
 		};
+		B5C8BDA519E4AB0D006AEC89 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B5C8BDA619E4AB57006AEC89 /* KnockResponseViewController.h */,
+				B5C8BDA719E4AB57006AEC89 /* KnockResponseViewController.m */,
+				B5C8BDA919E4AB6C006AEC89 /* KnockResponseStoryboard.storyboard */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
 		D4F419C514D90FFB00D02120 = {
 			isa = PBXGroup;
 			children = (
@@ -166,6 +181,7 @@
 		D4F419DA14D90FFB00D02120 /* PushNotificationTutorial */ = {
 			isa = PBXGroup;
 			children = (
+				B5C8BDA519E4AB0D006AEC89 /* View */,
 				D4F419E314D90FFB00D02120 /* AppDelegate.h */,
 				D4F419E414D90FFB00D02120 /* AppDelegate.m */,
 				D4F419E614D90FFB00D02120 /* ViewController.h */,
@@ -252,6 +268,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BD61B4A419E4919600C24891 /* Storyboard-Main.storyboard in Resources */,
+				B5C8BDAA19E4AB6C006AEC89 /* KnockResponseStoryboard.storyboard in Resources */,
 				D4F419DF14D90FFB00D02120 /* InfoPlist.strings in Resources */,
 				D4F419EB14D90FFB00D02120 /* ViewController.xib in Resources */,
 				6D2CA81916E01A8300B2695E /* Default-568h@2x.png in Resources */,
@@ -269,6 +286,7 @@
 				BD61B4B119E4A0F300C24891 /* UserDetailViewController.m in Sources */,
 				BD61B4AA19E4934C00C24891 /* UsersTableViewController.m in Sources */,
 				24D588DD19E496B70098C082 /* User.m in Sources */,
+				B5C8BDA819E4AB57006AEC89 /* KnockResponseViewController.m in Sources */,
 				D4F419E514D90FFB00D02120 /* AppDelegate.m in Sources */,
 				B541B98019E485C7001D0EA0 /* PMDoorController.m in Sources */,
 				D4F419E814D90FFB00D02120 /* ViewController.m in Sources */,
