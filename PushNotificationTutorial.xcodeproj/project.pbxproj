@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		24D588D919E490EE0098C082 /* UsersTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24D588D819E490EE0098C082 /* UsersTableViewController.m */; };
+		24D588DD19E496B70098C082 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 24D588DC19E496B70098C082 /* User.m */; };
 		6D10F48516DD714F00690A0F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D10F48416DD714F00690A0F /* CoreLocation.framework */; };
 		6D2CA81916E01A8300B2695E /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D2CA81816E01A8300B2695E /* Default-568h@2x.png */; };
 		B541B98019E485C7001D0EA0 /* PMDoorController.m in Sources */ = {isa = PBXBuildFile; fileRef = B541B97F19E485C7001D0EA0 /* PMDoorController.m */; };
@@ -38,6 +40,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		24D588D719E490EE0098C082 /* UsersTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UsersTableViewController.h; path = Users/UsersTableViewController.h; sourceTree = "<group>"; };
+		24D588D819E490EE0098C082 /* UsersTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UsersTableViewController.m; path = Users/UsersTableViewController.m; sourceTree = "<group>"; };
+		24D588DB19E496B70098C082 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		24D588DC19E496B70098C082 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		6D10F48416DD714F00690A0F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		6D2CA81816E01A8300B2695E /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		B541B97E19E485C7001D0EA0 /* PMDoorController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PMDoorController.h; sourceTree = "<group>"; };
@@ -105,6 +111,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		24D588DA19E490F40098C082 /* Users */ = {
+			isa = PBXGroup;
+			children = (
+				24D588D719E490EE0098C082 /* UsersTableViewController.h */,
+				24D588D819E490EE0098C082 /* UsersTableViewController.m */,
+				24D588DB19E496B70098C082 /* User.h */,
+				24D588DC19E496B70098C082 /* User.m */,
+			);
+			name = Users;
+			sourceTree = "<group>";
+		};
 		D4F419C514D90FFB00D02120 = {
 			isa = PBXGroup;
 			children = (
@@ -162,6 +179,7 @@
 				BD61B4A319E4919600C24891 /* Storyboard-Main.storyboard */,
 				BD61B4A819E4934C00C24891 /* UsersTableViewController.h */,
 				BD61B4A919E4934C00C24891 /* UsersTableViewController.m */,
+				24D588DA19E490F40098C082 /* Users */,
 			);
 			path = PushNotificationTutorial;
 			sourceTree = "<group>";
@@ -249,6 +267,7 @@
 			files = (
 				D4F419E114D90FFB00D02120 /* main.m in Sources */,
 				BD61B4AA19E4934C00C24891 /* UsersTableViewController.m in Sources */,
+				24D588DD19E496B70098C082 /* User.m in Sources */,
 				D4F419E514D90FFB00D02120 /* AppDelegate.m in Sources */,
 				B541B98019E485C7001D0EA0 /* PMDoorController.m in Sources */,
 				D4F419E814D90FFB00D02120 /* ViewController.m in Sources */,
