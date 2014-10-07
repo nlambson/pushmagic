@@ -40,8 +40,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		24D588D719E490EE0098C082 /* UsersTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UsersTableViewController.h; path = Users/UsersTableViewController.h; sourceTree = "<group>"; };
-		24D588D819E490EE0098C082 /* UsersTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UsersTableViewController.m; path = Users/UsersTableViewController.m; sourceTree = "<group>"; };
 		24D588DB19E496B70098C082 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		24D588DC19E496B70098C082 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		6D10F48416DD714F00690A0F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -116,8 +114,6 @@
 		24D588DA19E490F40098C082 /* Users */ = {
 			isa = PBXGroup;
 			children = (
-				24D588D719E490EE0098C082 /* UsersTableViewController.h */,
-				24D588D819E490EE0098C082 /* UsersTableViewController.m */,
 				24D588DB19E496B70098C082 /* User.h */,
 				24D588DC19E496B70098C082 /* User.m */,
 			);

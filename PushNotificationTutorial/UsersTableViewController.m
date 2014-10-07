@@ -8,6 +8,9 @@
 
 #import "UsersTableViewController.h"
 #import "UserDetailViewController.h"
+#import <AddressBook/AddressBook.h>
+#import <AddressBookUI/AddressBookUI.h>
+#import "User.h"
 
 @interface UsersTableViewController ()
 @property (nonatomic, strong) NSMutableArray *contactsArray;
@@ -17,14 +20,35 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+    self.contactsArray = [[NSMutableArray alloc] init];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addNewUser)];
+    
+    PFQuery *query = [PFQuery queryWithClassName:[User className]];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (error) {
+            // Log details of the failure
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+            
+        } else {
+            // The find succeeded. The first 100 objects are available in objects
+            NSLog(@"objects: %@", objects);
+            
+            for (PFObject *object in objects) {
+                NSLog(@"%@", object[@"knockTimings"]);
+                NSArray *knockTimings = @[];
+                User *user = [[User alloc] initWithName:object[@"name"] color:object[@"color"] knockTimings:knockTimings keycode:object[@"keycode"]];
+                
+                [self.contactsArray addObject:user];
+            }
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.tableView reloadData];
+            });
+
+        }
+    }];
     
     self.navigationItem.rightBarButtonItem = addButton;
 }
@@ -57,8 +81,10 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"UserCell" forIndexPath:indexPath];
     
     // Configure the cell...
-    NSDictionary *dict = self.contactsArray[indexPath.row];
-    cell.textLabel.text = [dict valueForKey:@"firstName"];
+    User *user = self.contactsArray[indexPath.row];
+    
+    cell.textLabel.text = user.name;
+    
     return cell;
 }
 
