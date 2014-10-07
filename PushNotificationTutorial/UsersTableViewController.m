@@ -37,10 +37,10 @@
             NSLog(@"objects: %@", objects);
             
             for (PFObject *object in objects) {
-                NSLog(@"%@", object[@"knockTimings"]);
-                NSArray *knockTimings = @[];
+                NSArray *knockTimings = object[@"knockTimings"];
                 User *user = [[User alloc] initWithName:object[@"name"] color:object[@"color"] knockTimings:knockTimings keycode:object[@"keycode"]];
                 
+                NSLog(@"%@", user.knockTimings);
                 [self.contactsArray addObject:user];
             }
             dispatch_async(dispatch_get_main_queue(), ^{
