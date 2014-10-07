@@ -8,12 +8,13 @@
 
 #import "UserDetailViewController.h"
 
-@interface UserDetailViewController ()
+@interface UserDetailViewController () <UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *knockViewHeightConstraint;
 @property (weak, nonatomic) IBOutlet UIButton *knockStartStopButton;
 @property (nonatomic) BOOL isRecordingKnock;
 @property (nonatomic, strong) NSMutableArray *knocksArray;
 @property (nonatomic, strong) NSDate *lastKnockTime;
+@property (weak, nonatomic) IBOutlet UITextField *keyCodeField;
 @end
 
 @implementation UserDetailViewController
@@ -28,6 +29,7 @@
     self.knockViewHeightConstraint.constant = 0;
     self.knocksArray = [NSMutableArray new];
     self.isRecordingKnock = NO;
+    self.keyCodeField.delegate = self;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -47,6 +49,12 @@
             NSLog(@"BAD: %@", error.description);
         }
     }];
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    return YES;
 }
 
 - (IBAction)knockTouched:(id)sender {

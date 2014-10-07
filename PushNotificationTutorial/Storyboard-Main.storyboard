@@ -89,14 +89,25 @@
                                     <action selector="actualKnockTouched:" destination="2lM-wX-jxe" eventType="touchUpInside" id="c2n-FY-JEt"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="4 Digit Key Code" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6Im-Iu-G5h">
+                                <rect key="frame" x="16" y="291" width="568" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="xlG-ww-nhx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="done"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="6Im-Iu-G5h" firstAttribute="top" secondItem="lz1-NR-PZh" secondAttribute="bottom" constant="8" id="8li-6M-1br"/>
+                            <constraint firstItem="6Im-Iu-G5h" firstAttribute="leading" secondItem="aC3-l4-SGN" secondAttribute="leadingMargin" id="Jae-Nm-vwI"/>
                             <constraint firstItem="2Ud-Sz-EqR" firstAttribute="trailing" secondItem="aC3-l4-SGN" secondAttribute="trailingMargin" id="T1j-N6-kch"/>
                             <constraint firstItem="bRZ-oc-9fY" firstAttribute="leading" secondItem="aC3-l4-SGN" secondAttribute="leading" constant="16" id="YhA-Cf-VXj"/>
                             <constraint firstItem="lz1-NR-PZh" firstAttribute="leading" secondItem="aC3-l4-SGN" secondAttribute="leading" constant="16" id="ZIp-ev-zcL"/>
                             <constraint firstItem="2Ud-Sz-EqR" firstAttribute="leading" secondItem="aC3-l4-SGN" secondAttribute="leadingMargin" id="aSf-Ic-X6U"/>
                             <constraint firstAttribute="trailing" secondItem="bRZ-oc-9fY" secondAttribute="trailing" constant="16" id="g7U-UK-pJK"/>
+                            <constraint firstItem="6Im-Iu-G5h" firstAttribute="trailing" secondItem="aC3-l4-SGN" secondAttribute="trailingMargin" id="gRs-Bb-ivs"/>
                             <constraint firstItem="2Ud-Sz-EqR" firstAttribute="top" secondItem="6HS-9b-xyQ" secondAttribute="bottom" constant="8" id="iqz-re-IES"/>
                             <constraint firstAttribute="trailing" secondItem="lz1-NR-PZh" secondAttribute="trailing" constant="16" id="oCr-mR-r7V"/>
                             <constraint firstItem="bRZ-oc-9fY" firstAttribute="top" secondItem="2Ud-Sz-EqR" secondAttribute="bottom" constant="8" id="qNW-bQ-cKq"/>
@@ -104,6 +115,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="keyCodeField" destination="6Im-Iu-G5h" id="dcx-1J-VJ8"/>
                         <outlet property="knockStartStopButton" destination="bRZ-oc-9fY" id="OoB-hF-k8J"/>
                         <outlet property="knockViewHeightConstraint" destination="0cU-Xh-Z0E" id="Vha-zS-Rk1"/>
                     </connections>
