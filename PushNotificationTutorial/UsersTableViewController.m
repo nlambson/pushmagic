@@ -7,12 +7,10 @@
 //
 
 #import "UsersTableViewController.h"
-#import <AddressBook/AddressBook.h>
-#import <AddressBookUI/AddressBookUI.h>
+#import "UserDetailViewController.h"
 
-@interface UsersTableViewController () <ABPeoplePickerNavigationControllerDelegate>
+@interface UsersTableViewController ()
 @property (nonatomic, strong) NSMutableArray *contactsArray;
-@property (nonatomic, strong) ABPeoplePickerNavigationController *peopleViewController;
 @end
 
 @implementation UsersTableViewController
@@ -26,49 +24,20 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
-    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(showAddressBook)];
+    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addNewUser)];
     
     self.navigationItem.rightBarButtonItem = addButton;
+}
+
+- (void)addNewUser {
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Storyboard-Main" bundle:nil];
+    UserDetailViewController *controller = [sb instantiateViewControllerWithIdentifier:@"UserDetailStoryboard"];
+    [self.navigationController pushViewController:controller animated:YES];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
--(void)showAddressBook {
-    self.peopleViewController = [[ABPeoplePickerNavigationController alloc] init];
-    [self.peopleViewController setPeoplePickerDelegate:self];
-    [self presentViewController:self.peopleViewController animated:YES completion:nil];
-}
-
--(BOOL)peoplePickerNavigationController:(ABPeoplePickerNavigationController *)peoplePicker shouldContinueAfterSelectingPerson:(ABRecordRef)person{
-    NSMutableDictionary *contactInfoDict = [[NSMutableDictionary alloc]
-                                            initWithObjects:@[@"", @"", @"", @"", @"", @"", @"", @"", @""]
-                                            forKeys:@[@"firstName", @"lastName", @"mobileNumber", @"homeNumber", @"homeEmail", @"workEmail", @"address", @"zipCode", @"city"]];
-    
-    
-    CFTypeRef generalCFObject;
-    generalCFObject = ABRecordCopyValue(person, kABPersonFirstNameProperty);
-    if (generalCFObject) {
-        [contactInfoDict setObject:(__bridge NSString *)generalCFObject forKey:@"firstName"];
-        CFRelease(generalCFObject);
-    }
-    
-    if (ABPersonHasImageData(person)) {
-        NSData *contactImageData = (__bridge NSData *)ABPersonCopyImageDataWithFormat(person, kABPersonImageFormatThumbnail);
-        
-        [contactInfoDict setObject:contactImageData forKey:@"image"];
-    }
-    
-    if (!self.contactsArray) {
-        self.contactsArray = [NSMutableArray new];
-    }
-    
-    [self.contactsArray addObject:contactInfoDict];
-    [self.tableView reloadData];
-    
-    return NO;
 }
 
 #pragma mark - Table view data source
