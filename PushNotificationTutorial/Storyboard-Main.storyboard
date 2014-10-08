@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ngN-Bq-fhp">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14A379a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ngN-Bq-fhp">
     <dependencies>
+        <deployment defaultVersion="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -97,12 +98,34 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numbersAndPunctuation" returnKeyType="done"/>
                             </textField>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GZ2-7p-rwA">
+                                <rect key="frame" x="454" y="329" width="130" height="30"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="eMt-rc-CSS"/>
+                                    <constraint firstAttribute="width" constant="130" id="mA5-sr-0VS"/>
+                                </constraints>
+                            </view>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="1qc-jq-NiO">
+                                <rect key="frame" x="14" y="329" width="434" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="YR1-qW-HaA"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="colorValueChanged:" destination="2lM-wX-jxe" eventType="valueChanged" id="ilr-Zb-kB8"/>
+                                </connections>
+                            </slider>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="GZ2-7p-rwA" firstAttribute="trailing" secondItem="aC3-l4-SGN" secondAttribute="trailingMargin" id="8kd-MV-d6R"/>
                             <constraint firstItem="6Im-Iu-G5h" firstAttribute="top" secondItem="lz1-NR-PZh" secondAttribute="bottom" constant="8" id="8li-6M-1br"/>
+                            <constraint firstItem="GZ2-7p-rwA" firstAttribute="leading" secondItem="1qc-jq-NiO" secondAttribute="trailing" constant="8" id="8tZ-EN-kV0"/>
                             <constraint firstItem="6Im-Iu-G5h" firstAttribute="leading" secondItem="aC3-l4-SGN" secondAttribute="leadingMargin" id="Jae-Nm-vwI"/>
+                            <constraint firstItem="GZ2-7p-rwA" firstAttribute="leading" secondItem="1qc-jq-NiO" secondAttribute="trailing" constant="8" id="Nhp-8d-p2d"/>
+                            <constraint firstItem="GZ2-7p-rwA" firstAttribute="top" secondItem="6Im-Iu-G5h" secondAttribute="bottom" constant="8" id="OrQ-yp-Pzt"/>
                             <constraint firstItem="2Ud-Sz-EqR" firstAttribute="trailing" secondItem="aC3-l4-SGN" secondAttribute="trailingMargin" id="T1j-N6-kch"/>
+                            <constraint firstItem="1qc-jq-NiO" firstAttribute="top" secondItem="6Im-Iu-G5h" secondAttribute="bottom" constant="8" id="Xni-c3-N1D"/>
                             <constraint firstItem="bRZ-oc-9fY" firstAttribute="leading" secondItem="aC3-l4-SGN" secondAttribute="leading" constant="16" id="YhA-Cf-VXj"/>
                             <constraint firstItem="lz1-NR-PZh" firstAttribute="leading" secondItem="aC3-l4-SGN" secondAttribute="leading" constant="16" id="ZIp-ev-zcL"/>
                             <constraint firstItem="2Ud-Sz-EqR" firstAttribute="leading" secondItem="aC3-l4-SGN" secondAttribute="leadingMargin" id="aSf-Ic-X6U"/>
@@ -112,9 +135,12 @@
                             <constraint firstAttribute="trailing" secondItem="lz1-NR-PZh" secondAttribute="trailing" constant="16" id="oCr-mR-r7V"/>
                             <constraint firstItem="bRZ-oc-9fY" firstAttribute="top" secondItem="2Ud-Sz-EqR" secondAttribute="bottom" constant="8" id="qNW-bQ-cKq"/>
                             <constraint firstItem="lz1-NR-PZh" firstAttribute="top" secondItem="bRZ-oc-9fY" secondAttribute="bottom" constant="8" id="yrC-J9-g92"/>
+                            <constraint firstItem="1qc-jq-NiO" firstAttribute="leading" secondItem="aC3-l4-SGN" secondAttribute="leadingMargin" id="zaS-P5-8Xj"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="colorPreviewView" destination="GZ2-7p-rwA" id="aA3-UM-bfv"/>
+                        <outlet property="colorSlider" destination="1qc-jq-NiO" id="KMg-VZ-czp"/>
                         <outlet property="keyCodeField" destination="6Im-Iu-G5h" id="dcx-1J-VJ8"/>
                         <outlet property="knockStartStopButton" destination="bRZ-oc-9fY" id="OoB-hF-k8J"/>
                         <outlet property="knockViewHeightConstraint" destination="0cU-Xh-Z0E" id="Vha-zS-Rk1"/>

@@ -15,6 +15,8 @@
 @property (nonatomic, strong) NSMutableArray *knocksArray;
 @property (nonatomic, strong) NSDate *lastKnockTime;
 @property (weak, nonatomic) IBOutlet UITextField *keyCodeField;
+@property (weak, nonatomic) IBOutlet UIView *colorPreviewView;
+@property (weak, nonatomic) IBOutlet UISlider *colorSlider;
 @end
 
 @implementation UserDetailViewController
@@ -35,6 +37,9 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)colorValueChanged:(id)sender {
 }
 
 - (void)saveUser {
