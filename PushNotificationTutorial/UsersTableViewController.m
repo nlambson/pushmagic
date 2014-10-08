@@ -166,8 +166,8 @@
 - (void)receiveKnockNotification:(NSNotification *)notification {
 
     KnockResponseViewController *knockResponse = [[UIStoryboard storyboardWithName:@"KnockResponseStoryboard" bundle:[NSBundle mainBundle]] instantiateInitialViewController];
-    knockResponse.hue = 1;
-    knockResponse.userName = [notification.userInfo objectForKey:@"name"] ?: @"User Name";
+    knockResponse.hue = [[notification.object objectForKey:@"color"] doubleValue] ?: 1;
+    knockResponse.userName = [notification.object objectForKey:@"name"] ?: @"A Visitor";
     knockResponse.avatarURL = @"http://3.bp.blogspot.com/-0wITKPo79TU/TqHHQz5QGvI/AAAAAAAAALg/5sYcYq59CL0/s1600/Homer.jpg";
     [self.navigationController pushViewController:knockResponse animated:YES];
 }
