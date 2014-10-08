@@ -116,12 +116,20 @@
 - (void)playKnock:(id)sender {
     NSLog(@"Play knock");
     
+    NSArray *knocks;
+    
+    if (self.user) {
+        knocks = self.user.knockTimings;
+    } else {
+        knocks = self.knocksArray;
+    }
+    
     [NSArray arrayWithObjects:self.user.knockTimings, nil];
-    __block double nextDelay = 0.0;
-    [self.user.knockTimings enumerateObjectsUsingBlock:^(NSNumber *number, NSUInteger idx, BOOL *stop) {
-        NSLog(@"DELAY IS: %@", number);
-        [self performSelector:@selector(playSound) withObject:nil afterDelay:nextDelay];
+    __block double nextDelay = 0.5;
+    [self performSelector:@selector(playSound) withObject:nil afterDelay:nextDelay];
+    [knocks enumerateObjectsUsingBlock:^(NSNumber *number, NSUInteger idx, BOOL *stop) {
         nextDelay += number.doubleValue;
+        [self performSelector:@selector(playSound) withObject:nil afterDelay:nextDelay];
     }];
     
 }
@@ -146,7 +154,9 @@
         }];
         self.lastKnockTime = nil;
     } else {
-        [self.knockStartStopButton setTitle:@"Start Recording" forState:UIControlStateNormal];
+        [self.knockStartStopButton setTitle:@"Replay Knock" forState:UIControlStateNormal];
+        [self.knockStartStopButton removeTarget:self action:nil forControlEvents:UIControlEventAllEvents];
+        [self.knockStartStopButton addTarget:self action:@selector(playKnock:) forControlEvents:UIControlEventTouchUpInside];
         self.knockViewHeightConstraint.constant = 0;
         [UIView animateWithDuration:0.5 animations:^{
             [self.view layoutIfNeeded];
