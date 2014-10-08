@@ -57,12 +57,21 @@
     }];
     
     self.navigationItem.rightBarButtonItem = addButton;
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
     
-//    KnockResponseViewController *knockResponse = [[UIStoryboard storyboardWithName:@"KnockResponseStoryboard" bundle:[NSBundle mainBundle]] instantiateInitialViewController];
-//    knockResponse.hue = 1;
-//    knockResponse.userName = @"User Name";
-//    knockResponse.avatarURL = @"http://3.bp.blogspot.com/-0wITKPo79TU/TqHHQz5QGvI/AAAAAAAAALg/5sYcYq59CL0/s1600/Homer.jpg";
-//    [self.navigationController pushViewController:knockResponse animated:YES];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(receiveKnockNotification:)
+                                                 name:@"PushKnock"
+                                               object:nil];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (void)addNewUser {
@@ -146,6 +155,14 @@
         UserDetailViewController *detail = (UserDetailViewController *)segue.destinationViewController;
         detail.user = self.selectedUser;
     }
+}
+
+- (void)receiveKnockNotification:(NSNotification *)notification {
+    KnockResponseViewController *knockResponse = [[UIStoryboard storyboardWithName:@"KnockResponseStoryboard" bundle:[NSBundle mainBundle]] instantiateInitialViewController];
+    knockResponse.hue = 1;
+    knockResponse.userName = @"User Name";
+    knockResponse.avatarURL = @"http://3.bp.blogspot.com/-0wITKPo79TU/TqHHQz5QGvI/AAAAAAAAALg/5sYcYq59CL0/s1600/Homer.jpg";
+    [self.navigationController pushViewController:knockResponse animated:YES];
 }
 
 @end

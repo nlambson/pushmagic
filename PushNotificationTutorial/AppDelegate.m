@@ -101,8 +101,10 @@
     // Override point for customization after application launch.
     // [application registerForRemoteNotificationTypes:UIRemoteNotificationTypeAlert|UIRemoteNotificationTypeBadge|UIRemoteNotificationTypeSound];
     
-    self.viewController = [[ViewController alloc] initWithNibName:@"ViewController" bundle:nil];
-    self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:self.viewController];
+    
+    UIStoryboard *sb = [UIStoryboard storyboardWithName:@"Storyboard-Main" bundle:nil];
+//    self.viewController = [[ViewController alloc] initWithNibName:@"ViewController" bundle:nil];
+    self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[sb instantiateInitialViewController]];
     [self.window makeKeyAndVisible];
     return YES;
 }
@@ -125,6 +127,8 @@
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
     [PFPush handlePush:userInfo];
+    
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"PushKnock" object:userInfo];
 }
 
 
