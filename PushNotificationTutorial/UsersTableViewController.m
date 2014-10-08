@@ -13,6 +13,8 @@
 #import "User.h"
 #import "UserDetailViewController.h"
 
+#import "KnockResponseViewController.h"
+
 @interface UsersTableViewController ()
 @property (nonatomic, strong) NSMutableArray *contactsArray;
 
@@ -55,6 +57,12 @@
     }];
     
     self.navigationItem.rightBarButtonItem = addButton;
+    
+//    KnockResponseViewController *knockResponse = [[UIStoryboard storyboardWithName:@"KnockResponseStoryboard" bundle:[NSBundle mainBundle]] instantiateInitialViewController];
+//    knockResponse.hue = 1;
+//    knockResponse.userName = @"User Name";
+//    knockResponse.avatarURL = @"http://3.bp.blogspot.com/-0wITKPo79TU/TqHHQz5QGvI/AAAAAAAAALg/5sYcYq59CL0/s1600/Homer.jpg";
+//    [self.navigationController pushViewController:knockResponse animated:YES];
 }
 
 - (void)addNewUser {

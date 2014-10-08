@@ -10,6 +10,8 @@
 
 @interface KnockResponseViewController : UIViewController
 
-
+@property (nonatomic, strong) NSString *userName;
+@property (nonatomic, strong) NSString *avatarURL;
+@property double hue;
 
 @end

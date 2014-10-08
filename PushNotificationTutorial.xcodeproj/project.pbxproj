@@ -13,6 +13,7 @@
 		B541B98019E485C7001D0EA0 /* PMDoorController.m in Sources */ = {isa = PBXBuildFile; fileRef = B541B97F19E485C7001D0EA0 /* PMDoorController.m */; };
 		B5C8BDA819E4AB57006AEC89 /* KnockResponseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5C8BDA719E4AB57006AEC89 /* KnockResponseViewController.m */; };
 		B5C8BDAA19E4AB6C006AEC89 /* KnockResponseStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5C8BDA919E4AB6C006AEC89 /* KnockResponseStoryboard.storyboard */; };
+		B5C8BDAD19E4B074006AEC89 /* Spock.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B5C8BDAC19E4B074006AEC89 /* Spock.jpg */; };
 		BD61B4A419E4919600C24891 /* Storyboard-Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD61B4A319E4919600C24891 /* Storyboard-Main.storyboard */; };
 		BD61B4AA19E4934C00C24891 /* UsersTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD61B4A919E4934C00C24891 /* UsersTableViewController.m */; };
 		BD61B4AC19E4978700C24891 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD61B4AB19E4978700C24891 /* AddressBook.framework */; };
@@ -51,6 +52,7 @@
 		B5C8BDA619E4AB57006AEC89 /* KnockResponseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KnockResponseViewController.h; sourceTree = "<group>"; };
 		B5C8BDA719E4AB57006AEC89 /* KnockResponseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KnockResponseViewController.m; sourceTree = "<group>"; };
 		B5C8BDA919E4AB6C006AEC89 /* KnockResponseStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = KnockResponseStoryboard.storyboard; sourceTree = "<group>"; };
+		B5C8BDAC19E4B074006AEC89 /* Spock.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Spock.jpg; path = ../../../../Downloads/Spock.jpg; sourceTree = "<group>"; };
 		BD61B4A319E4919600C24891 /* Storyboard-Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Storyboard-Main.storyboard"; sourceTree = "<group>"; };
 		BD61B4A819E4934C00C24891 /* UsersTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UsersTableViewController.h; sourceTree = "<group>"; };
 		BD61B4A919E4934C00C24891 /* UsersTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UsersTableViewController.m; sourceTree = "<group>"; };
@@ -135,6 +137,14 @@
 			name = View;
 			sourceTree = "<group>";
 		};
+		B5C8BDAB19E4B063006AEC89 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				B5C8BDAC19E4B074006AEC89 /* Spock.jpg */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
 		D4F419C514D90FFB00D02120 = {
 			isa = PBXGroup;
 			children = (
@@ -181,6 +191,7 @@
 		D4F419DA14D90FFB00D02120 /* PushNotificationTutorial */ = {
 			isa = PBXGroup;
 			children = (
+				B5C8BDAB19E4B063006AEC89 /* Images */,
 				B5C8BDA519E4AB0D006AEC89 /* View */,
 				D4F419E314D90FFB00D02120 /* AppDelegate.h */,
 				D4F419E414D90FFB00D02120 /* AppDelegate.m */,
@@ -267,6 +278,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5C8BDAD19E4B074006AEC89 /* Spock.jpg in Resources */,
 				BD61B4A419E4919600C24891 /* Storyboard-Main.storyboard in Resources */,
 				B5C8BDAA19E4AB6C006AEC89 /* KnockResponseStoryboard.storyboard in Resources */,
 				D4F419DF14D90FFB00D02120 /* InfoPlist.strings in Resources */,
@@ -380,8 +392,8 @@
 				INFOPLIST_FILE = "PushNotificationTutorial/PushNotificationTutorial-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				PROVISIONING_PROFILE = "df286c92-6c94-4a5c-a4a5-34d3b9c7a30e";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "df286c92-6c94-4a5c-a4a5-34d3b9c7a30e";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -401,8 +413,8 @@
 				INFOPLIST_FILE = "PushNotificationTutorial/PushNotificationTutorial-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				PROVISIONING_PROFILE = "df286c92-6c94-4a5c-a4a5-34d3b9c7a30e";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "df286c92-6c94-4a5c-a4a5-34d3b9c7a30e";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
