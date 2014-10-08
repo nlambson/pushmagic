@@ -25,9 +25,12 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    UIBarButtonItem *saveItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(saveUser)];
     
-    self.navigationItem.rightBarButtonItem = saveItem;
+    if (!self.user) {
+        UIBarButtonItem *saveItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(saveUser)];
+        self.navigationItem.rightBarButtonItem = saveItem;
+    }
+    
     self.knockViewHeightConstraint.constant = 0;
     self.knocksArray = [NSMutableArray new];
     self.isRecordingKnock = NO;
