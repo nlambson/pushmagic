@@ -11,9 +11,13 @@
 #import <AddressBook/AddressBook.h>
 #import <AddressBookUI/AddressBookUI.h>
 #import "User.h"
+#import "UserDetailViewController.h"
 
 @interface UsersTableViewController ()
 @property (nonatomic, strong) NSMutableArray *contactsArray;
+
+@property (nonatomic, strong) User *selectedUser;
+
 @end
 
 @implementation UsersTableViewController
@@ -89,6 +93,11 @@
 }
 
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    User *selectedUser = [self.contactsArray objectAtIndex:indexPath.row];
+    self.selectedUser = selectedUser;
+}
+
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -123,14 +132,12 @@
 }
 */
 
-/*
 #pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqualToString:@"ShowUserDetailsSegue"]) {
+        UserDetailViewController *detail = (UserDetailViewController *)segue.destinationViewController;
+        detail.user = self.selectedUser;
+    }
 }
-*/
 
 @end

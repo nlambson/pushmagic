@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <Parse/Parse.h>
+#import "User.h"
 
 @interface UserDetailViewController : UIViewController
-@property (nonatomic, strong) PFObject *user;
+
+@property (nonatomic, strong) User *user;
 
 @end

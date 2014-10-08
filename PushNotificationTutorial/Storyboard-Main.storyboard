@@ -29,7 +29,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="2lM-wX-jxe" kind="show" id="G9M-68-HcW"/>
+                                    <segue destination="2lM-wX-jxe" kind="show" identifier="ShowUserDetailsSegue" id="G9M-68-HcW"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
