@@ -33,10 +33,12 @@
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addNewUser)];
     
     self.navigationItem.rightBarButtonItem = addButton;
-    
+    self.title = @"Users";
 }
 
 - (void)queryUsersAndReload {
+    
+    [self.contactsArray removeAllObjects];
     PFQuery *query = [PFQuery queryWithClassName:[User className]];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (error) {

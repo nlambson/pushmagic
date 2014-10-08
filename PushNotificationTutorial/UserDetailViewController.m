@@ -31,6 +31,7 @@
     if (!self.user) {
         UIBarButtonItem *saveItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(saveUser)];
         self.navigationItem.rightBarButtonItem = saveItem;
+        self.title = @"New User";
     }
     // Viewing user data selected from table on previous view
     else {
@@ -46,6 +47,7 @@
         [self.knockStartStopButton setTitle:@"Play Knock" forState:UIControlStateNormal];
         [self.knockStartStopButton removeTarget:self action:nil forControlEvents:UIControlEventAllEvents];
         [self.knockStartStopButton addTarget:self action:@selector(playKnock:) forControlEvents:UIControlEventTouchUpInside];
+        self.title = @"User Details";
     }
     
     self.knockViewHeightConstraint.constant = 0;
