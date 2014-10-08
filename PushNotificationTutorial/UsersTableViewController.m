@@ -18,7 +18,7 @@
 @interface UsersTableViewController ()
 @property (nonatomic, strong) NSMutableArray *contactsArray;
 
-@property (nonatomic, strong) User *selectedUser;
+//@property (nonatomic, strong) User *selectedUser;
 
 @end
 
@@ -110,10 +110,10 @@
 }
 
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    User *selectedUser = [self.contactsArray objectAtIndex:indexPath.row];
-    self.selectedUser = selectedUser;
-}
+//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+//    User *selectedUser = [self.contactsArray objectAtIndex:indexPath.row];
+//    self.selectedUser = selectedUser;
+//}
 
 /*
 // Override to support conditional editing of the table view.
@@ -153,7 +153,8 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"ShowUserDetailsSegue"]) {
         UserDetailViewController *detail = (UserDetailViewController *)segue.destinationViewController;
-        detail.user = self.selectedUser;
+        detail.user = [self.contactsArray objectAtIndex:self.tableView.indexPathForSelectedRow.row];
+        
     }
 }
 

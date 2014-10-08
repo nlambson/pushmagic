@@ -18,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UIView *colorPreviewView;
 @property (weak, nonatomic) IBOutlet UISlider *colorSlider;
 @property (nonatomic) double colorValue;
+@property (weak, nonatomic) IBOutlet UITextField *userNameField;
 @end
 
 @implementation UserDetailViewController
@@ -33,7 +34,14 @@
     }
     // Viewing user data selected from table on previous view
     else {
+        self.userNameField.text = self.user.name;
         self.keyCodeField.text = self.user.keycode;
+        self.colorSlider.value = self.user.color.floatValue;
+        self.colorPreviewView.backgroundColor = [UIColor colorWithHue:(self.user.color.floatValue/360.0) saturation:1.0 brightness:1.0 alpha:1.0];
+        
+        // TODO: Change knock text
+        //       Replay knock or something cool like that
+        
     }
     
     self.knockViewHeightConstraint.constant = 0;
@@ -56,15 +64,30 @@
 - (void)saveUser {
     NSLog(@"INTO SAVE USER");
     
-    PFObject *user = [[PFObject alloc] init];
-    [user setValue:@"Rick" forKey:@"name"];
+    NSString *name = self.userNameField.text;
+    NSNumber *color = [NSNumber numberWithDouble:self.colorValue];
+    NSString *keycode = self.keyCodeField.text;
+
+    User *user = [[User alloc] initWithName:name color:color knockTimings:self.knocksArray keycode:keycode];
     [user saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-        if (succeeded) {
-            NSLog(@"GOOD");
-        } else {
-            NSLog(@"BAD: %@", error.description);
+        if (error) {
+            NSLog(@"error: %@", error.localizedDescription);
+        }
+        else {
+            NSLog(@"succeeded");
         }
     }];
+    
+//    
+//    PFObject *user = [[PFObject alloc] init];
+//    [user setValue:@"Rick" forKey:@"name"];
+//    [user saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+//        if (succeeded) {
+//            NSLog(@"GOOD");
+//        } else {
+//            NSLog(@"BAD: %@", error.description);
+//        }
+//    }];
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField

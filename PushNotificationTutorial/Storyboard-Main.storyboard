@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6206.8" systemVersion="14A379a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ngN-Bq-fhp">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7026.1"/>
-        <capability name="Constraints with attributes relative to the layout margin" minToolsVersion="6.0"/>
+        <deployment defaultVersion="1792" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Users Table View Controller-->
@@ -143,6 +144,7 @@
                         <outlet property="keyCodeField" destination="6Im-Iu-G5h" id="dcx-1J-VJ8"/>
                         <outlet property="knockStartStopButton" destination="bRZ-oc-9fY" id="OoB-hF-k8J"/>
                         <outlet property="knockViewHeightConstraint" destination="0cU-Xh-Z0E" id="Vha-zS-Rk1"/>
+                        <outlet property="userNameField" destination="2Ud-Sz-EqR" id="eeK-2V-19V"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vuf-Kv-A8c" userLabel="First Responder" sceneMemberID="firstResponder"/>
