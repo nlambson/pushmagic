@@ -26,10 +26,14 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    
+    // Creating a new user
     if (!self.user) {
         UIBarButtonItem *saveItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(saveUser)];
         self.navigationItem.rightBarButtonItem = saveItem;
+    }
+    // Viewing user data selected from table on previous view
+    else {
+        self.keyCodeField.text = self.user.keycode;
     }
     
     self.knockViewHeightConstraint.constant = 0;
