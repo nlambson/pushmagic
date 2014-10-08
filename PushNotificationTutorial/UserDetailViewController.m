@@ -8,7 +8,7 @@
 
 #import "UserDetailViewController.h"
 
-@interface UserDetailViewController () <UITextFieldDelegate>
+@interface UserDetailViewController () <UITextFieldDelegate, UIAlertViewDelegate>
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *knockViewHeightConstraint;
 @property (weak, nonatomic) IBOutlet UIButton *knockStartStopButton;
 @property (nonatomic) BOOL isRecordingKnock;
@@ -42,6 +42,10 @@
         // TODO: Change knock text
         //       Replay knock or something cool like that
         
+        
+        [self.knockStartStopButton setTitle:@"Play Knock" forState:UIControlStateNormal];
+        [self.knockStartStopButton removeTarget:self action:nil forControlEvents:UIControlEventAllEvents];
+        [self.knockStartStopButton addTarget:self action:@selector(playKnock:) forControlEvents:UIControlEventTouchUpInside];
     }
     
     self.knockViewHeightConstraint.constant = 0;
@@ -72,9 +76,14 @@
     [user saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (error) {
             NSLog(@"error: %@", error.localizedDescription);
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Uh...." message:@"Not sure how this happened but the save didn't work. You should try again." delegate:self cancelButtonTitle:@"Fine" otherButtonTitles:nil];
+            alert.tag = 100;
+            [alert show];
         }
         else {
             NSLog(@"succeeded");
+            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Panda Happy!" message:@"Your user was successfully created." delegate:self cancelButtonTitle:@"I love it!" otherButtonTitles:nil];
+            [alert show];
         }
     }];
     
@@ -90,10 +99,40 @@
 //    }];
 }
 
+- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
+{
+    if (alertView.tag == 100) {
+        // Error
+    } else {
+        [self.navigationController popViewControllerAnimated:YES];
+    }
+}
+
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
     [textField resignFirstResponder];
     return YES;
+}
+- (void)playKnock:(id)sender {
+    NSLog(@"Play knock");
+    
+    [NSArray arrayWithObjects:self.user.knockTimings, nil];
+    __block double nextDelay = 0.0;
+    [self.user.knockTimings enumerateObjectsUsingBlock:^(NSNumber *number, NSUInteger idx, BOOL *stop) {
+        NSLog(@"DELAY IS: %@", number);
+        [self performSelector:@selector(playSound) withObject:nil afterDelay:nextDelay];
+        nextDelay += number.doubleValue;
+    }];
+    
+}
+
+- (void)playSound {
+    AudioServicesPlaySystemSound(1104);
+    [UIView animateWithDuration:0.1 animations:^{
+        self.knockStartStopButton.backgroundColor = [UIColor darkGrayColor];
+    } completion:^(BOOL finished) {
+        self.knockStartStopButton.backgroundColor = [UIColor lightGrayColor];
+    }];
 }
 
 - (IBAction)knockTouched:(id)sender {

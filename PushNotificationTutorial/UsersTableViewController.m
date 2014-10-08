@@ -32,6 +32,11 @@
     
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addNewUser)];
     
+    self.navigationItem.rightBarButtonItem = addButton;
+    
+}
+
+- (void)queryUsersAndReload {
     PFQuery *query = [PFQuery queryWithClassName:[User className]];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (error) {
@@ -52,11 +57,9 @@
             dispatch_async(dispatch_get_main_queue(), ^{
                 [self.tableView reloadData];
             });
-
+            
         }
     }];
-    
-    self.navigationItem.rightBarButtonItem = addButton;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -66,6 +69,8 @@
                                              selector:@selector(receiveKnockNotification:)
                                                  name:@"PushKnock"
                                                object:nil];
+    
+    [self queryUsersAndReload];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
