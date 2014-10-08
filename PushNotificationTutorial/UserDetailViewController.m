@@ -17,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *keyCodeField;
 @property (weak, nonatomic) IBOutlet UIView *colorPreviewView;
 @property (weak, nonatomic) IBOutlet UISlider *colorSlider;
+@property (nonatomic) double colorValue;
 @end
 
 @implementation UserDetailViewController
@@ -42,7 +43,10 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)colorValueChanged:(id)sender {
+- (IBAction)colorValueChanged:(UISlider *)sender {
+    UIColor *color = [UIColor colorWithHue:(sender.value / 360) saturation:1.0 brightness:1.0 alpha:1.0];
+    self.colorPreviewView.backgroundColor = color;
+    self.colorValue = sender.value;
 }
 
 - (void)saveUser {

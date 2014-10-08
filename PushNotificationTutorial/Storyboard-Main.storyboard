@@ -106,7 +106,7 @@
                                     <constraint firstAttribute="width" constant="130" id="mA5-sr-0VS"/>
                                 </constraints>
                             </view>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="1qc-jq-NiO">
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="360" translatesAutoresizingMaskIntoConstraints="NO" id="1qc-jq-NiO">
                                 <rect key="frame" x="14" y="329" width="434" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="YR1-qW-HaA"/>
