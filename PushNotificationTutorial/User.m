@@ -24,7 +24,7 @@
         self.name = name;
         self.color = color;
         self.knockTimings = knockTimings;
-        self.keycode = keycode;
+        self.keycode = @"1234";
     }
     return self;
 }

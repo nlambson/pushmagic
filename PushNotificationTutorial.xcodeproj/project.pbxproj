@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1DB2069719E6359900D75D86 /* RSKImageCropViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DB2069019E6359900D75D86 /* RSKImageCropViewController.m */; };
+		1DB2069819E6359900D75D86 /* RSKImageScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DB2069219E6359900D75D86 /* RSKImageScrollView.m */; };
+		1DB2069919E6359900D75D86 /* RSKTouchView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DB2069419E6359900D75D86 /* RSKTouchView.m */; };
+		1DB2069A19E6359900D75D86 /* UIImage+FixOrientation.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DB2069619E6359900D75D86 /* UIImage+FixOrientation.m */; };
 		24D588DD19E496B70098C082 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 24D588DC19E496B70098C082 /* User.m */; };
 		6D10F48516DD714F00690A0F /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D10F48416DD714F00690A0F /* CoreLocation.framework */; };
 		6D2CA81916E01A8300B2695E /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6D2CA81816E01A8300B2695E /* Default-568h@2x.png */; };
@@ -43,6 +47,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1DB2068E19E6359900D75D86 /* RSKImageCropper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSKImageCropper.h; sourceTree = "<group>"; };
+		1DB2068F19E6359900D75D86 /* RSKImageCropViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSKImageCropViewController.h; sourceTree = "<group>"; };
+		1DB2069019E6359900D75D86 /* RSKImageCropViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSKImageCropViewController.m; sourceTree = "<group>"; };
+		1DB2069119E6359900D75D86 /* RSKImageScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSKImageScrollView.h; sourceTree = "<group>"; };
+		1DB2069219E6359900D75D86 /* RSKImageScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSKImageScrollView.m; sourceTree = "<group>"; };
+		1DB2069319E6359900D75D86 /* RSKTouchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSKTouchView.h; sourceTree = "<group>"; };
+		1DB2069419E6359900D75D86 /* RSKTouchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSKTouchView.m; sourceTree = "<group>"; };
+		1DB2069519E6359900D75D86 /* UIImage+FixOrientation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+FixOrientation.h"; sourceTree = "<group>"; };
+		1DB2069619E6359900D75D86 /* UIImage+FixOrientation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+FixOrientation.m"; sourceTree = "<group>"; };
 		24D588DB19E496B70098C082 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		24D588DC19E496B70098C082 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		6D10F48416DD714F00690A0F /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -118,6 +131,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1DB2068D19E6359900D75D86 /* RSKImageCropper */ = {
+			isa = PBXGroup;
+			children = (
+				1DB2068E19E6359900D75D86 /* RSKImageCropper.h */,
+				1DB2068F19E6359900D75D86 /* RSKImageCropViewController.h */,
+				1DB2069019E6359900D75D86 /* RSKImageCropViewController.m */,
+				1DB2069119E6359900D75D86 /* RSKImageScrollView.h */,
+				1DB2069219E6359900D75D86 /* RSKImageScrollView.m */,
+				1DB2069319E6359900D75D86 /* RSKTouchView.h */,
+				1DB2069419E6359900D75D86 /* RSKTouchView.m */,
+				1DB2069519E6359900D75D86 /* UIImage+FixOrientation.h */,
+				1DB2069619E6359900D75D86 /* UIImage+FixOrientation.m */,
+			);
+			path = RSKImageCropper;
+			sourceTree = "<group>";
+		};
 		24D588DA19E490F40098C082 /* Users */ = {
 			isa = PBXGroup;
 			children = (
@@ -190,6 +219,7 @@
 		D4F419DA14D90FFB00D02120 /* PushNotificationTutorial */ = {
 			isa = PBXGroup;
 			children = (
+				1DB2068D19E6359900D75D86 /* RSKImageCropper */,
 				B5C8BDAB19E4B063006AEC89 /* Images */,
 				B5C8BDA519E4AB0D006AEC89 /* View */,
 				D4F419E314D90FFB00D02120 /* AppDelegate.h */,
@@ -294,13 +324,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1DB2069819E6359900D75D86 /* RSKImageScrollView.m in Sources */,
+				1DB2069719E6359900D75D86 /* RSKImageCropViewController.m in Sources */,
 				D4F419E114D90FFB00D02120 /* main.m in Sources */,
 				BD61B4B119E4A0F300C24891 /* UserDetailViewController.m in Sources */,
 				BD61B4AA19E4934C00C24891 /* UsersTableViewController.m in Sources */,
+				1DB2069919E6359900D75D86 /* RSKTouchView.m in Sources */,
 				24D588DD19E496B70098C082 /* User.m in Sources */,
 				B5C8BDA819E4AB57006AEC89 /* KnockResponseViewController.m in Sources */,
 				D4F419E514D90FFB00D02120 /* AppDelegate.m in Sources */,
 				B541B98019E485C7001D0EA0 /* PMDoorController.m in Sources */,
+				1DB2069A19E6359900D75D86 /* UIImage+FixOrientation.m in Sources */,
 				D4F419E814D90FFB00D02120 /* ViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -34,6 +34,7 @@
     
     self.navigationItem.rightBarButtonItem = addButton;
     self.title = @"Users";
+    self.tableView.separatorInset = UIEdgeInsetsMake(0, 8 + 45 + 8, 0, 0);
 }
 
 - (void)queryUsersAndReload {
@@ -52,6 +53,7 @@
             for (PFObject *object in objects) {
                 NSArray *knockTimings = object[@"knockTimings"];
                 User *user = [[User alloc] initWithName:object[@"name"] color:object[@"color"] knockTimings:knockTimings keycode:object[@"keycode"]];
+                user.avatar = [object valueForKey:@"avatar"];
                 
                 NSLog(@"%@", user.knockTimings);
                 [self.contactsArray addObject:user];
@@ -111,7 +113,23 @@
     // Configure the cell...
     User *user = self.contactsArray[indexPath.row];
     
-    cell.textLabel.text = user.name;
+    UILabel *lbl = (UILabel *)[cell viewWithTag:2];
+    UIImageView *imageView = (UIImageView *)[cell viewWithTag:1];
+    
+    lbl.text = user.name;
+    imageView.image = nil;
+    
+    imageView.layer.cornerRadius = imageView.frame.size.height * 0.5;
+    imageView.clipsToBounds = YES;
+    imageView.backgroundColor = [UIColor colorWithWhite:0.99 alpha:1.0];
+    
+    [user.avatar getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+        if (!error) {
+            UIImage *image = [UIImage imageWithData:data];
+            // image can now be set on a UIImageView
+            imageView.image = image;
+        }
+    }];
     
     return cell;
 }

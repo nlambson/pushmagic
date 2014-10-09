@@ -22,6 +22,8 @@
 // Users access keycode
 @property NSString *keycode;
 
+@property (nonatomic, strong) PFFile *avatar;
+
 - (User *)initWithName:(NSString *)name color:(NSNumber *)color knockTimings:(NSArray *)knockTimings keycode:(NSString *)keycode;
 
 + (NSString *)className;
