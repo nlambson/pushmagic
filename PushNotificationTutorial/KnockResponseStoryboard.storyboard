@@ -43,6 +43,13 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="W8f-SA-PTB">
+                                <rect key="frame" x="200" y="44" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="IkX-2y-sxF"/>
+                                    <constraint firstAttribute="height" constant="200" id="iMr-HZ-sXH"/>
+                                </constraints>
+                            </imageView>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="3Wv-nh-ebz">
                                 <rect key="frame" x="282" y="125" width="37" height="37"/>
                                 <constraints>
@@ -50,13 +57,6 @@
                                     <constraint firstAttribute="width" constant="37" id="Kg5-Wp-ohb"/>
                                 </constraints>
                             </activityIndicatorView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Spock.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="W8f-SA-PTB">
-                                <rect key="frame" x="200" y="44" width="200" height="200"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="IkX-2y-sxF"/>
-                                    <constraint firstAttribute="height" constant="200" id="iMr-HZ-sXH"/>
-                                </constraints>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -86,7 +86,4 @@
             <point key="canvasLocation" x="583" y="333"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="Spock.jpg" width="579" height="434"/>
-    </resources>
 </document>

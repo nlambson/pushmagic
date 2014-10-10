@@ -23,6 +23,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *profileImageView;
 @property (weak, nonatomic) IBOutlet UIButton *knockHereButton;
 @property (weak, nonatomic) IBOutlet UIButton *addImageButton;
+@property (nonatomic) IBOutlet UIBarButtonItem *saveItem;
 @property (nonatomic, strong) UIImagePickerController *controller;
 @end
 
@@ -34,8 +35,8 @@
     
     // Creating a new user
     if (!self.user) {
-        UIBarButtonItem *saveItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(saveUser)];
-        self.navigationItem.rightBarButtonItem = saveItem;
+        self.saveItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(saveUser)];
+        self.navigationItem.rightBarButtonItem = self.saveItem;
         self.title = @"New User";
     }
     // Viewing user data selected from table on previous view
@@ -216,25 +217,27 @@
     NSNumber *color = [NSNumber numberWithDouble:self.colorValue];
     NSString *keycode = self.keyCodeField.text;
     
-    NSData *imageData = UIImagePNGRepresentation(self.profileImageView.image);
+    UIImage *scaledImage = [UserDetailViewController imageWithImage:self.profileImageView.image scaledToSize:CGSizeMake(200.0f, 200.0f)];
+    
+    NSData *imageData = UIImagePNGRepresentation(scaledImage);
     PFFile *imageFile = [PFFile fileWithName:@"image.png" data:imageData];
     [imageFile saveInBackground];
 
     User *user = [[User alloc] initWithName:name color:color knockTimings:self.knocksArray keycode:keycode];
     [user setObject:imageFile forKey:@"avatar"];
+    self.saveItem.enabled = NO;
     [user saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (error) {
+            
+            self.saveItem.enabled = YES;
             NSLog(@"error: %@", error.localizedDescription);
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Uh...." message:@"Not sure how this happened but the save didn't work. You should try again." delegate:self cancelButtonTitle:@"Fine" otherButtonTitles:nil];
             alert.tag = 100;
             [alert show];
-        }
-        else {
             
-            // Upload image
-//            [self uploadImage:imageData];
+        } else {
             
-            
+            self.saveItem.enabled = YES;
             NSLog(@"succeeded");
             UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Panda Happy!" message:@"Your user was successfully created." delegate:self cancelButtonTitle:@"I love it!" otherButtonTitles:nil];
             [alert show];
@@ -253,6 +256,17 @@
 //            NSLog(@"BAD: %@", error.description);
 //        }
 //    }];
+}
+
++ (UIImage *)imageWithImage:(UIImage *)image scaledToSize:(CGSize)newSize {
+    //UIGraphicsBeginImageContext(newSize);
+    // In next line, pass 0.0 to use the current device's pixel scaling factor (and thus account for Retina resolution).
+    // Pass 1.0 to force exact pixel size.
+    UIGraphicsBeginImageContextWithOptions(newSize, NO, 0.0);
+    [image drawInRect:CGRectMake(0, 0, newSize.width, newSize.height)];
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return newImage;
 }
 
 - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex

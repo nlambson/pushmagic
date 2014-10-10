@@ -8,7 +8,7 @@
 
 #import "KnockResponseViewController.h"
 
-
+#import "User.h"
 
 
 @interface KnockResponseViewController ()
@@ -30,7 +30,7 @@
     self.avatarImageView.layer.cornerRadius = CGRectGetHeight(self.avatarImageView.frame)/2;
     self.avatarImageView.layer.borderColor = [[UIColor blueColor] CGColor];
     self.avatarImageView.layer.borderWidth = 2.0f;
-    self.avatarImageView.backgroundColor = [UIColor darkGrayColor];
+    self.avatarImageView.backgroundColor = [UIColor whiteColor];
     self.avatarImageView.clipsToBounds = YES;
 
     self.messageLabel.text = @"Is at your door";
@@ -39,23 +39,36 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
+    self.userColorView.backgroundColor = [UIColor colorWithHue:[self.hue doubleValue]/360.0f saturation:1.0f brightness:1.0f alpha:1.0f];
+    
     if (self.userName) {
         self.userNameLabel.text = self.userName;
-    }
     
-    self.userColorView.backgroundColor = [UIColor colorWithHue:self.hue/360.0f saturation:1.0f brightness:1.0f alpha:1.0f];
-    
-    if (self.avatarURL) {
-        self.avatarImageView.image = nil;
         [self.activityIndicator startAnimating];
-        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-            NSURL *url = [NSURL URLWithString:[self.avatarURL stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
-            NSData *data = [NSData dataWithContentsOfURL:url];
-            dispatch_async(dispatch_get_main_queue(), ^{
+        PFQuery *query = [PFQuery queryWithClassName:[User className] predicate:[NSPredicate predicateWithFormat:@"name == %@", self.userName]];
+        [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+            if (error) {
+                // Log details of the failure
+                NSLog(@"Error: %@ %@", error, [error userInfo]);
                 [self.activityIndicator stopAnimating];
-                self.avatarImageView.image = [UIImage imageWithData:data];
-            });
-        });
+            } else {
+                // The find succeeded. The first 100 objects are available in objects
+                NSLog(@"objects: %@", objects);
+                
+                User *user = nil;
+                for (PFObject *object in objects) {
+                    NSArray *knockTimings = object[@"knockTimings"];
+                    user = [[User alloc] initWithName:object[@"name"] color:object[@"color"] knockTimings:knockTimings keycode:object[@"keycode"]];
+                    user.avatar = [object valueForKey:@"avatar"];
+                    break;
+                }
+                
+                [user.avatar getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+                    self.avatarImageView.image = [UIImage imageWithData:data];
+                    [self.activityIndicator stopAnimating];
+                }];
+            }
+        }];
     }
 }
 

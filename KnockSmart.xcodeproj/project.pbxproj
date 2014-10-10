@@ -79,14 +79,14 @@
 		C44D5FA4161FA226007044A5 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		C44D5FA5161FA226007044A5 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		C44D5FA6161FA226007044A5 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
-		D4F419D014D90FFB00D02120 /* PushNotificationTutorial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PushNotificationTutorial.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D4F419D014D90FFB00D02120 /* KnockSmart.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KnockSmart.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4F419D414D90FFB00D02120 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		D4F419D614D90FFB00D02120 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D4F419D814D90FFB00D02120 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		D4F419DC14D90FFB00D02120 /* PushNotificationTutorial-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PushNotificationTutorial-Info.plist"; sourceTree = "<group>"; };
+		D4F419DC14D90FFB00D02120 /* KnockSmart-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "KnockSmart-Info.plist"; sourceTree = "<group>"; };
 		D4F419DE14D90FFB00D02120 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		D4F419E014D90FFB00D02120 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		D4F419E214D90FFB00D02120 /* PushNotificationTutorial-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PushNotificationTutorial-Prefix.pch"; sourceTree = "<group>"; };
+		D4F419E214D90FFB00D02120 /* KnockSmart-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KnockSmart-Prefix.pch"; sourceTree = "<group>"; };
 		D4F419E314D90FFB00D02120 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		D4F419E414D90FFB00D02120 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		D4F419E614D90FFB00D02120 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
@@ -185,7 +185,7 @@
 		D4F419D114D90FFB00D02120 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D4F419D014D90FFB00D02120 /* PushNotificationTutorial.app */,
+				D4F419D014D90FFB00D02120 /* KnockSmart.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -245,10 +245,10 @@
 			isa = PBXGroup;
 			children = (
 				6D2CA81816E01A8300B2695E /* Default-568h@2x.png */,
-				D4F419DC14D90FFB00D02120 /* PushNotificationTutorial-Info.plist */,
+				D4F419DC14D90FFB00D02120 /* KnockSmart-Info.plist */,
 				D4F419DD14D90FFB00D02120 /* InfoPlist.strings */,
 				D4F419E014D90FFB00D02120 /* main.m */,
-				D4F419E214D90FFB00D02120 /* PushNotificationTutorial-Prefix.pch */,
+				D4F419E214D90FFB00D02120 /* KnockSmart-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -256,9 +256,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		D4F419CF14D90FFB00D02120 /* PushNotificationTutorial */ = {
+		D4F419CF14D90FFB00D02120 /* KnockSmart */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D4F419EE14D90FFB00D02120 /* Build configuration list for PBXNativeTarget "PushNotificationTutorial" */;
+			buildConfigurationList = D4F419EE14D90FFB00D02120 /* Build configuration list for PBXNativeTarget "KnockSmart" */;
 			buildPhases = (
 				D4F419CC14D90FFB00D02120 /* Sources */,
 				D4F419CD14D90FFB00D02120 /* Frameworks */,
@@ -268,9 +268,9 @@
 			);
 			dependencies = (
 			);
-			name = PushNotificationTutorial;
+			name = KnockSmart;
 			productName = PushNotificationTutorial;
-			productReference = D4F419D014D90FFB00D02120 /* PushNotificationTutorial.app */;
+			productReference = D4F419D014D90FFB00D02120 /* KnockSmart.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -286,7 +286,7 @@
 					};
 				};
 			};
-			buildConfigurationList = D4F419CA14D90FFB00D02120 /* Build configuration list for PBXProject "PushNotificationTutorial" */;
+			buildConfigurationList = D4F419CA14D90FFB00D02120 /* Build configuration list for PBXProject "KnockSmart" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -298,7 +298,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D4F419CF14D90FFB00D02120 /* PushNotificationTutorial */,
+				D4F419CF14D90FFB00D02120 /* KnockSmart */,
 			);
 		};
 /* End PBXProject section */
@@ -424,10 +424,10 @@
 					"\"$(SRCROOT)\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "PushNotificationTutorial/PushNotificationTutorial-Prefix.pch";
-				INFOPLIST_FILE = "PushNotificationTutorial/PushNotificationTutorial-Info.plist";
+				GCC_PREFIX_HEADER = "PushNotificationTutorial/KnockSmart-Prefix.pch";
+				INFOPLIST_FILE = "PushNotificationTutorial/KnockSmart-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = KnockSmart;
 				PROVISIONING_PROFILE = "df286c92-6c94-4a5c-a4a5-34d3b9c7a30e";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "df286c92-6c94-4a5c-a4a5-34d3b9c7a30e";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -447,10 +447,10 @@
 					"\"$(SRCROOT)\"",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "PushNotificationTutorial/PushNotificationTutorial-Prefix.pch";
-				INFOPLIST_FILE = "PushNotificationTutorial/PushNotificationTutorial-Info.plist";
+				GCC_PREFIX_HEADER = "PushNotificationTutorial/KnockSmart-Prefix.pch";
+				INFOPLIST_FILE = "PushNotificationTutorial/KnockSmart-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = KnockSmart;
 				PROVISIONING_PROFILE = "df286c92-6c94-4a5c-a4a5-34d3b9c7a30e";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "df286c92-6c94-4a5c-a4a5-34d3b9c7a30e";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -461,7 +461,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		D4F419CA14D90FFB00D02120 /* Build configuration list for PBXProject "PushNotificationTutorial" */ = {
+		D4F419CA14D90FFB00D02120 /* Build configuration list for PBXProject "KnockSmart" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D4F419EC14D90FFB00D02120 /* Debug */,
@@ -470,7 +470,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D4F419EE14D90FFB00D02120 /* Build configuration list for PBXNativeTarget "PushNotificationTutorial" */ = {
+		D4F419EE14D90FFB00D02120 /* Build configuration list for PBXNativeTarget "KnockSmart" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D4F419EF14D90FFB00D02120 /* Debug */,

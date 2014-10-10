@@ -12,6 +12,6 @@
 
 @property (nonatomic, strong) NSString *userName;
 @property (nonatomic, strong) NSString *avatarURL;
-@property double hue;
+@property (nonatomic, strong) NSNumber *hue;
 
 @end
